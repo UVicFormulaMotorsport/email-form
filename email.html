@@ -8,6 +8,30 @@
 <html>
 <head>
     <form id="register-form" action="/" method="post">
+
+    <!-- Check if browser supports some of the features used in the register-form -->
+    <script>
+        //create input element for testing
+        var input = document.createElement('input');
+
+        //create the supports object
+        var supports = {};
+
+        supports.autofocus = 'autofocus' in input;
+        supports.required    = 'required' in input;
+        supports.placeholder = 'placeholder' in input;
+        
+        if(!supports.autofocus){
+            //no autofocus support
+        }
+        if(!supports.required){
+            //no required support
+        }
+        if(!supports.placeholder){
+            //no placeholder support
+        }
+
+    </script>
 </head>
     <body>   
         <form id="register-form" action="/" method"post">
