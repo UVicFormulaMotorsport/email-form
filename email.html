@@ -11,6 +11,7 @@
 
     <!-- Check if browser supports some of the features used in the register-form -->
     <script>
+    (function() {
         //create input element for testing
         var input = document.createElement('input');
 
@@ -20,43 +21,51 @@
         supports.autofocus = 'autofocus' in input;
         supports.required    = 'required' in input;
         supports.placeholder = 'placeholder' in input;
-        
+
         if(!supports.autofocus){
-            //no autofocus support
+            console.log("no autofocus support")
         }
         if(!supports.required){
-            //no required support
+            console.log("no required support")
         }
         if(!supports.placeholder){
-            //no placeholder support
+            console.log("no placeholder support")
         }
 
+        var send = document.getElementById("register-submit");
+        if(send){
+            send.onclick = function () {
+                console.log('...Sending');
+            }
+        }
+    })();
     </script>
+
 </head>
     <body>   
         <form id="register-form" action="/" method"post">
             <h3>Join FSAE</h3>
             <h4>Fill in the form below to join our mailing list</h4>
-            <div>
+            <div class="">
                 <label>
                     <span>Name: (required)</span>
                     <input type ="name" placeholder="Please enter your name" type="text" tabindex="1" required autofocus>
                 </label>
             </div>
-            <div>
+            <div class="">
                 <label>
                         <span>Email: (required)</span>
-                        <input placeholder="someone@example.com" type="email"  type="text" tabindex="2" required>
+                        <input placeholder="someone@example.com" type="email" tabindex="2" required>
                 </label>
             </div>
-            <div>
+            <div class="">
                 <label>
                     <span>ExtraInfo: </span>
                     <textarea style="width: 300px; heigh: 150px;" placeholder="Include any additional information about yourself if you like here" tabindex="3"></textarea> 
                 </label>
             </div>
-            <div>
-                <button name="submit" id="register-submit" type="button" onclick="alert('Submitted! (not really)')">Submit</button>
+            <div class="">
+                <button name="submit" id="register-submit" type="button">Submit</button>
             </div>
         </form>
     </body>
