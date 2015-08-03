@@ -1,0 +1,56 @@
+<!-- A simple HTML 5 test email form to get started
+    Basically the person hits a "join FSAE" link somewhere, it takes them to this
+    page, they put their email in and it sends them a confirmation mail saying welcome.
+     I peiced this together from stuff I found online -->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FSAE</title>    
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body> 
+    
+    <div class="wrapper">
+        <div id="main">  
+        <!-- form start-->
+        <form id="register-form" action="/" method"post">
+            <h3>Join FSAE</h3>
+            <h4>Fill in the form below to join our mailing list</h4>
+
+            <div class="">
+                <label>
+                    <span>Name: (required)</span>
+                    <input type ="text" placeholder="Please enter your name" tabindex="1" required autofocus>
+                </label>
+            </div>
+
+            <div class="">
+                <label>
+                        <span>Email: (required)</span>
+                        <input placeholder="someone@example.com" type="email" tabindex="2" required>
+                </label>
+            </div>
+
+            <div class="">
+                <label>
+                    <span>ExtraInfo: </span>
+                    <textarea style="width: 300px; heigh: 150px;" placeholder="Include any additional information about yourself if you like here" tabindex="3"></textarea> 
+                </label>
+            </div>
+
+            <div class="">
+                <button name="submit" type="submit" id="register-submit" >Submit</button>
+            </div>
+
+        </form>
+        <!-- /form -->
+
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
