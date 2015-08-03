@@ -7,52 +7,23 @@
 
 <html>
 <head>
-    <form id="register-form" action="/" method="post">
-
-    <!-- Check if browser supports some of the features used in the register-form -->
-    <script>
-    (function() {
-        //create input element for testing
-        var input = document.createElement('input');
-
-        //create the supports object
-        var supports = {};
-
-        supports.autofocus = 'autofocus' in input;
-        supports.required    = 'required' in input;
-        supports.placeholder = 'placeholder' in input;
-
-        if(!supports.autofocus){
-            console.log("no autofocus support")
-        }
-        if(!supports.required){
-            console.log("no required support")
-        }
-        if(!supports.placeholder){
-            console.log("no placeholder support")
-        }
-
-    
-        //create send object for detecting button press, *** This doesn't work right now   ***
-        var send = document.getElementById("register-submit");
-        if(send){
-            send.onclick = function () {
-                console.log('...Sending');
-            }
-        }
-        
-    })();
-    </script>
-
+    <meta charset="UTF-8">
+    <title>FSAE</title>    
+    <link href="css/style.css" rel="stylesheet">
 </head>
-    <body>   
+
+<body> 
+    
+    <div class="wrapper">
+        <div id="main">  
+        <!-- form -->
         <form id="register-form" action="/" method"post">
             <h3>Join FSAE</h3>
             <h4>Fill in the form below to join our mailing list</h4>
             <div class="">
                 <label>
                     <span>Name: (required)</span>
-                    <input type ="name" placeholder="Please enter your name" type="text" tabindex="1" required autofocus>
+                    <input type ="text" placeholder="Please enter your name" tabindex="1" required autofocus>
                 </label>
             </div>
             <div class="">
@@ -68,8 +39,13 @@
                 </label>
             </div>
             <div class="">
-                <button name="submit" id="register-submit" type="button">Submit</button>
+                <button name="submit" type="submit" id="register-submit" >Submit</button>
             </div>
         </form>
-    </body>
+        <!-- /form -->
+
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
 </html>
