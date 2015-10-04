@@ -76,7 +76,5 @@ module.exports = function(app, express) {
         }
     });
     
-    // catchall route that will send to the homepage.
-    
     return apiRouter;
 };
