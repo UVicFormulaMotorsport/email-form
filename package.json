@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/UVicFormulaMotorsports/email-form/issues"
   },
-  "homepage": "https://github.com/UVicFormulaMotorsports/email-form"
+  "homepage": "https://github.com/UVicFormulaMotorsports/email-form",
+  "dependencies": {
+    "async": "^1.4.2",
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "jsonwebtoken": "^5.4.0",
+    "morgan": "^1.6.1",
+    "nodemailer": "^1.5.0",
+    "passport-local": "^1.0.0"
+  }
 }
