@@ -1,4 +1,4 @@
-var port = 8080;
+var port = 8080 || process.env.PORT;
 var secret = 'ssshhhthisissupersecretstuff';
 
 var config = function() {
