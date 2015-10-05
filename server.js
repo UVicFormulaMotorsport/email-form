@@ -42,5 +42,6 @@ app.get('*', function(req, res) {
 
 // I'MA FIRING THE SERVER!
 // =================================================================================
-app.listen(config.port)
-console.log('The answer to life the universe and everything is: ' + config.port);
+var port = config.getPort();
+app.listen(port)
+console.log('The app is running on port: ' + port);
