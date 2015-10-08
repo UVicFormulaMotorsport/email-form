@@ -1,9 +1,10 @@
-var config  = require('./config');
-var express = require('express');
+var config     = require('./config');
+var User       = require('./app/models/user');
 var bodyParser = require('body-parser');
-var morgan  = require('morgan');
-var app     = express();
-var path    = require('path');
+var morgan     = require('morgan');
+var path       = require('path');
+var express    = require('express');
+var app        = express();
 
 // APP CONFIGURATION
 // =================================================================================

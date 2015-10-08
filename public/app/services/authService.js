@@ -6,7 +6,7 @@ angular.module('authService', [])
 // inject $q to return promise objects
 // inject AuthToken to manage tokens
 
-.factory('Auth', function($http, $q, AuthToken) {
+.factory('Auth', function($http, AuthToken) {
     
     // create auth factory object
     var authFactory = {};
@@ -69,7 +69,7 @@ angular.module('authService', [])
 // =================================================================================
 // application configuration to integrate token into requests
 
-.factory('AuthInterceptor', function($q, AuthToken) {
+.factory('AuthInterceptor', function($q, $location, AuthToken) {
 
     var interceptorFactory = {};
     

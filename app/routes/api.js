@@ -1,8 +1,11 @@
-var user   = require('../models/user');
-var jwt    = require('jsonwebtoken');
-var config = require('../../config');
+var User       = require('../models/user');
+var config     = require('../../config');
+var jwt        = require('jsonwebtoken');
+var crypto     = require('crypto');
+var nodemailer = require('nodemailer');
+var async      = require('async');
 
-var superSecret = config.secret;
+var superSecret = String(config.secret);
 
 module.exports = function(app, express) {
 
@@ -12,7 +15,7 @@ module.exports = function(app, express) {
     apiRouter.post('/authenticate', function(req, res) {
         console.log(req.body.username);
 
-        var validUsername = user.compareUsername(req.body.username)
+        var validUsername = User.compareUsername(req.body.username)
         if(!validUsername) {
             res.json({
                 success: false,
@@ -21,7 +24,7 @@ module.exports = function(app, express) {
         }
         else {
         
-            var validPassword = user.comparePassword(req.body.password)
+            var validPassword = User.comparePassword(req.body.password)
             if(!validPassword) {
                 res.json({
                     success: false,
@@ -29,8 +32,8 @@ module.exports = function(app, express) {
                 });
             }
             else {
-                var token = jwt.sign(user, superSecret, {
-                    expiresInMinutes: 300 // expires in 5 hours
+                var token = jwt.sign(User, superSecret, {
+                    expiresIn: 18000 // expires in 5 hours
                 });
                 
                 res.json({

@@ -15,17 +15,35 @@ angular.module('loginCtrl', [])
     // function to handle login form
     vm.doLogin = function() {
         
-        // call the Auth.login() function
-        Auth.login(vm.loginData.username, vm.loginData.password)
-        .success(function(data) {
-            // if a user successfully logs in, redirect to mailer page
-            $location.path('/mailer');
-        });
+        vm.error = '';
+        
+        // Check that a username and password was entered
+        if(vm.loginData.username != null && vm.loginData.password != null) {
+        
+            // call the Auth.login() function
+            Auth.login(vm.loginData.username, vm.loginData.password)
+            .success(function(data) {
+                if(data.success) {
+                    vm.loggedIn = true;
+                    $location.path('/mailer');
+                }
+                else {
+                    vm.error = data.message;
+                    vm.errorMsg = 'Username or password is incorrect';
+                }
+            })
+        }
+        else {
+            vm.errorMsg = 'Username and Password are required';
+        }
     };
     
     // function to handle logging out
     vm.doLogout = function() {
         Auth.logout();
+        vm.loggedIn = false;
+        vm.error = '';
+        
         // reset all user info
         $location.path('/login');
     };
