@@ -12,3 +12,9 @@
 	Hey {{name}},
 	Thank you for coming!
 	-Formula Team
+	
+###To Do List:
+- Create email form page.
+- Create email form controller.
+- Make everything look nice.
+- Add form validation.
