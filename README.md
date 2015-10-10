@@ -16,5 +16,6 @@
 ###To Do List:
 - Create email form page.
 - Create email form controller.
-- Make everything look nice.
+- Make all the email stuff work nicely.
 - Add form validation.
+- Make everything look nice.
