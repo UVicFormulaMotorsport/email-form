@@ -1,10 +1,9 @@
 angular.module('authService', [])
 
-// =================================================================================
 // auth factory to login and get information
 // inject $http for communicating with the API
-// inject $q to return promise objects
 // inject AuthToken to manage tokens
+// =================================================================================
 
 .factory('Auth', function($http, AuthToken) {
     
@@ -43,9 +42,9 @@ angular.module('authService', [])
 
 })
 
-// =================================================================================
 // factory for handling tokens
 // inject $window to store token client-side
+// =================================================================================
 
 .factory('AuthToken', function($window) {
 
@@ -66,8 +65,8 @@ angular.module('authService', [])
     return authTokenFactory;
 })
 
-// =================================================================================
 // application configuration to integrate token into requests
+// =================================================================================
 
 .factory('AuthInterceptor', function($q, $location, AuthToken) {
 

@@ -10,6 +10,7 @@ angular.module('app.routes', ['ngRoute'])
             controllerAs : 'login'
         })
         
+        // email form page route
         .when('/mailer', {
             templateUrl  : 'app/views/pages/mailer.html',
         });

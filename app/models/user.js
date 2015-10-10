@@ -1,6 +1,7 @@
 var bcrypt = require('bcrypt-nodejs');
 
-// how these values are stored should probably be changed...
+// how these values are stored should probably be changed
+// before the final release?
 var nhash  = bcrypt.hashSync("admin");
 var phash  = bcrypt.hashSync("password");
 
