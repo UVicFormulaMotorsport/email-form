@@ -79,5 +79,12 @@ module.exports = function(app, express) {
         }
     });
     
+    // route for login authentication.
+    apiRouter.post('/mailer', function(req, res) {
+        console.log("Mail made it to the API!");
+        console.log(req.body.email);
+        console.log(req.body.recipients);
+    });
+    
     return apiRouter;
 };

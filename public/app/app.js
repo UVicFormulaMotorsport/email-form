@@ -1,4 +1,4 @@
-angular.module( 'MassMailer', ['app.routes','authService','loginCtrl'])
+angular.module( 'MassMailer', ['app.routes','authService','loginCtrl', 'mailService', 'mailCtrl'])
             
 .config(function($httpProvider) {
 	
