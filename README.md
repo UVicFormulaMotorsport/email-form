@@ -14,8 +14,10 @@
 	-Formula Team
 	
 ###To Do List:
-- Create email form page.
-- Create email form controller.
+- ~~Create email form page.~~
+- ~~Create email form controller.~~
+- Create email form api.
 - Make all the email stuff work nicely.
-- Add form validation.
+- Look into a preview button for the email page.
+- Add form validation for login and email page.
 - Make everything look nice.
