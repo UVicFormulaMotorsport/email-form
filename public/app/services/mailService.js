@@ -2,14 +2,16 @@ angular.module('mailService', [])
 
 .factory('Mail', function($http) {
     
-    // create auth factory object
+    // create mail factory object
     var mailFactory = {};
     
     // handle sending mail
-    mailFactory.send = function(email, recipients) {
+    mailFactory.send = function(subject, email, recipients) {
+        
         // return the promise object and its data
         return $http.post('/api/mailer', {
-            email: email, 
+            subject:    subject,
+            email:      email, 
             recipients: recipients
         })
         .success(function(data) {
@@ -17,7 +19,6 @@ angular.module('mailService', [])
         });
     };
     
-        
     // return mail factory object
     return mailFactory;
 });

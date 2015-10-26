@@ -7,17 +7,18 @@ angular.module('mailCtrl', [])
     var vm = this;
     vm.email = "";
     vm.recipients = "";
+    vm.subject ="";
     
     vm.sendMail = function(){
         
         vm.error = '';
         
-        if(vm.email != null && vm.recipients != null) {
+        if(vm.subject != null && vm.email != null && vm.recipients != null) {
             //Spliting the recipients string into an array.
             //Each entry is "name:email@domain.com"
             //This will be split again later before sending.
             var recipients = vm.recipients.split(/\r?\n/);
-            Mail.send(vm.email, recipients)
+            Mail.send(vm.subject, vm.email, recipients)
             .success(function(data) {
                 if(data.success) {
                     vm.success = true;

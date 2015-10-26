@@ -10,6 +10,9 @@
         <div class="col-sm-8 email-form">
             <div class="email-form">
                 <h2 class="email-form-title">Email Form</h2>
+                <textarea ng-model="mail.subject" rows="1" cols="80" 
+                    placeholder="Subject goes here." required>
+                </textarea>
                 <textarea ng-model="mail.email" rows="20" cols="80" 
                     placeholder="Dear <name>:" required>
                 </textarea>
@@ -18,7 +21,7 @@
         <div class="col-sm-4 recipients">
             <div class="recipients">
                 <h2 class="recipients-title">Recipients</h2>
-                <textarea ng-model="mail.recipients" rows="20" cols="40"
+                <textarea ng-model="mail.recipients" rows="21" cols="40"
                     placeholder="name:email@domain.org" required>
                 </textarea>
             </div>
