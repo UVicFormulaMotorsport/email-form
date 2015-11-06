@@ -81,10 +81,63 @@ module.exports = function(app, express) {
     
     // route for sending all the emails.
     apiRouter.post('/mailer', function(req, res) {
-        console.log("Mail made it to the API!");
-        console.log(req.body.subject);
-        console.log(req.body.email);
-        console.log(req.body.recipients);
+        
+        var mailTransporter;
+        
+        function massMailer(){
+            var self = this;
+            mailTransporter = nodemailer.createTransport({
+                service: "Gmail",
+                auth: {
+                    user: "<the email to send from>",           //This has to be changed.
+                    pass: "<the password for the above email>"  //This has to be changed.
+                }
+            });
+            self.invokeOperation();
+        };
+        
+        massMailer.prototype.invokeOperation = function() {
+            var self = this;
+            async.each(req.body.recipients, self.sendEmail);
+        }
+        
+        massMailer.prototype.sendEmail = function(Email, callback) {
+            var self = this;
+            var name_and_email = Email.split(":");
+            var name = name_and_email[0];
+            var email = name_and_email[1];
+            var finishedEmail = req.body.email.replace("<name>", name);
+            
+            console.log("Sending email to " + name + " at " + email);
+            async.waterfall([
+                function(callback) {
+                    var mailOptions = {
+                        from: "<the email to send from>",       //This has to be changed.
+                        to: email,
+                        subject: req.body.subject,
+                        test: finishedEmail
+                    };
+                    mailTransporter.sendMail(mailOptions, function(error, info) {
+                        if(error){
+                            console.log(error);
+                            res.json({
+                                success: false,
+                                message: 'Failed to send an email.'
+                            });
+                        }
+                    })
+                },
+                function(statusCode, Email, callback) {
+                    console.log("Successfully sent email to " + name + " at " + email);
+                    callback();
+                }
+            ],
+            function() {
+                callback();
+            }
+            )
+        }
+        new massMailer();
     });
     
     return apiRouter;
