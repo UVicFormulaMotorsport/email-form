@@ -11,7 +11,7 @@
 --
 <b>Example:</b>
 
-	Hey {{name}},
+	Hey <name>,
 	Thank you for coming!
 	-Formula Team
 	
