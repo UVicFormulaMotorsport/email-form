@@ -15,6 +15,12 @@
 	Thank you for coming!
 	-Formula Team
 	
+###Installation and setup (requires git, npm, and node):
+- git clone https://github.com/UVicFormulaMotorsport/email-form
+- npm install
+- node server.js
+- Go to http://localhost:8080/ in browser
+	
 ###To Do List:
 - ~~Create email form page.~~
 - ~~Create email form controller.~~
