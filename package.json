@@ -1,0 +1,30 @@
+{
+  "name": "FSAE-Mass-Mailer",
+  "version": "1.0.0",
+  "description": "Allows for the creation of a single email that is then sent and personalized automagically.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UVicFormulaMotorsports/email-form"
+  },
+  "author": "FSEA - Co.Auther: Joshua Portelance",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UVicFormulaMotorsports/email-form/issues"
+  },
+  "homepage": "https://github.com/UVicFormulaMotorsports/email-form",
+  "dependencies": {
+    "async": "^1.4.2",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "jsonwebtoken": "^5.4.0",
+    "morgan": "^1.6.1",
+    "nodemailer": "^1.5.0",
+    "passport-local": "^1.0.0"
+  }
+}

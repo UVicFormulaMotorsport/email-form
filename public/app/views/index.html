@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="MassMailer">
+<head>
+    <meta charset="UTF-8">
+    <title>FSAE</title>
+    
+    <!-- FOR ANGULAR ROUTING -->
+    <base href="/">
+    
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <!-- load angular and angular-route via CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    
+    <!-- main Angular app files -->
+    <script src="app/app.routes.js"></script>
+    <script src="app/app.js"></script>
+
+    <!-- controllers -->
+    <script src="app/controllers/loginCtrl.js"></script>
+    <script src="app/controllers/mailCtrl.js"></script>
+    
+    <!-- services -->
+    <script src="app/services/authService.js"></script>
+    <script src="app/services/mailService.js"></script>
+</head>
+
+<body ng-controller="loginController as login">
+    
+    <!-- NAVBAR -->
+    <header>
+        <div class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="/" class="navbar-brand">
+                    <span>
+                        <img src="../assets/img/logo2.png">
+                    </span> 
+                    Mass Mailer
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-if="login.loggedIn">
+                    <a href="#" ng-click="login.doLogout()">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <!-- ANGULAR VIEWS -->
+        <div ng-view></div>
+    </main>
+    
+</body>
+</html>
