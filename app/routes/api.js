@@ -52,7 +52,6 @@ module.exports = function(app, express) {
         
         // check header or url parameters or post parameters for token
         var token = req.body.token || 
-                    req.param('token') || 
                     req.headers['x-access-token'];
         
         // Time to decode the token
@@ -89,8 +88,8 @@ module.exports = function(app, express) {
             mailTransporter = nodemailer.createTransport({
                 service: "Gmail",
                 auth: {
-                    user: "<the email to send from>",           //This has to be changed.
-                    pass: "<the password for the above email>"  //This has to be changed.
+                    user: 'teh.emails.test.acct@gmail.com',
+                    pass: '12121234'
                 }
             });
             self.invokeOperation();
@@ -112,10 +111,10 @@ module.exports = function(app, express) {
             async.waterfall([
                 function(callback) {
                     var mailOptions = {
-                        from: "<the email to send from>",       //This has to be changed.
+                        from: 'teh.emails.test.acct@gmail.com',
                         to: email,
                         subject: req.body.subject,
-                        test: finishedEmail
+                        text: finishedEmail
                     };
                     mailTransporter.sendMail(mailOptions, function(error, info) {
                         if(error){
