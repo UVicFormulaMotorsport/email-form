@@ -1,5 +1,7 @@
 # email-form
 
+###Version: 1.0
+
 ###Description:
 - Create a basic webapp or script that sends out a batch email that can be personalized.
 - Single user authentication if webapp. (ie only one account is req. to log in, no account DB req.)
@@ -9,15 +11,21 @@
 --
 <b>Example:</b>
 
-	Hey {{name}},
+	Hey <name>,
 	Thank you for coming!
 	-Formula Team
+	
+###Installation and setup (requires git, npm, and node):
+- git clone https://github.com/UVicFormulaMotorsport/email-form
+- npm install
+- node server.js
+- Go to http://localhost:8080/ in browser
 	
 ###To Do List:
 - ~~Create email form page.~~
 - ~~Create email form controller.~~
-- Create email form api.
-- Make all the email stuff work nicely.
+- ~~Create email form api.~~
+- ~~Make all the email stuff work nicely.~~
 - Look into a preview button for the email page.
 - Add form validation for login and email page.
 - Make everything look nice.
